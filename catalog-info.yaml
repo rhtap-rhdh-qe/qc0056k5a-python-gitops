@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qc0056k5a-python-gitops
+  description: This is GitOps manifest for qc0056k5a-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=qc0056k5a-python
+    backstage.io/kubernetes-id: qc0056k5a-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qc0056k5a-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qc0056k5a-python
